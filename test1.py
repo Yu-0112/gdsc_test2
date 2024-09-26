@@ -4,14 +4,14 @@ from bs4 import BeautifulSoup  # 解析工具
 import time  # 用來暫停程式
  
 # 要爬的股票
-stock = ["1101", "2330"]
+stock = ["1101", "2891", "2330"]
 
 for i in range(len(stock)):  # 迴圈依序爬股價
     # 現在處理的股票
     stockid = stock[i]
 
     # 網址塞入股票編號
-    url = "https://tw.stock.yahoo.com/quote/" + stockid + ".TW"
+    url = "https://tw.stock.yahoo.com/quote/2891.TW"
 
     # 發送請求
     r = requests.get(url)
@@ -34,7 +34,7 @@ for i in range(len(stock)):  # 迴圈依序爬股價
     token = "8082666594:AAHBFtaPzQp-Y1hehZ0KI8M4AZStfkdVyKw"
 
     # 使用者 id
-    chat_id = "Yu-0112"
+    chat_id = "@LeoMkgYiAlsStock_Bot"
 
     # bot 送訊息
     url = f"https://api.telegram.org/bot{token}/sendMessage?chat_id={chat_id}&text={message}"
@@ -42,3 +42,4 @@ for i in range(len(stock)):  # 迴圈依序爬股價
 
     # 每次都停 3 秒
     time.sleep(3)
+
